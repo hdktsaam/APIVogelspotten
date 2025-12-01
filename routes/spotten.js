@@ -7,7 +7,8 @@ const routes = express.Router();
 // maak de verschillende routs aan
 
 routes.get("/", ctrlspotten.getVogels);
-routes.get("/:ID", ctrlspotten.getOneVogel);
+routes.get("/getOne/:ID", ctrlspotten.getOneVogel);
+routes.get("/getMax", ctrlspotten.getMaxSpotted);
 routes.put("/", ctrlspotten.AddVogel); // {soort}
 routes.patch("/", ctrlspotten.vogelGespot); // {ID}
 

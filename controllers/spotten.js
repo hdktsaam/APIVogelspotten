@@ -25,6 +25,11 @@ const AddVogel = (req, res) => {
   res.json(newVogel);
 };
 
+const getMaxSpotted = (req, res) => {
+  const maxGespot = Math.max(...vogels.map((vogel) => vogel.aantalKeerGespot));
+  res.json(maxGespot);
+};
+
 const newID = (lijst, idIndicator) => {
   lijst.forEach((item) => {
     maxID = 0;
@@ -38,4 +43,5 @@ module.exports = {
   getOneVogel,
   AddVogel,
   vogelGespot,
+  getMaxSpotted,
 };
